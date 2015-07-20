@@ -1,0 +1,260 @@
+@charset "utf-8";
+/* CSS Document */
+#main-nav {
+	position: static;
+}
+.navbar {
+	margin-bottom: 0;
+}
+#home-title {
+	color: #CCCCCC;
+}
+#home-intro {
+	/*margin-left: 3em;*/
+	color: #E4E4E4;
+}
+.login-mini-panel {
+	opacity: 0.9;
+	-moz-box-shadow: 0px 0px 5px #c6c6c6;
+	-webkit-box-shadow: 0px 0px 5px #c6c6c6;
+	box-shadow: 0px 0px 5px #c6c6c6;
+}
+.sm-line {
+	margin: 5px auto;
+}
+.counter {
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px dashed #828282;
+	border-right: none;
+}
+.counter tr td {
+	border-right: 1px dashed #828282;
+}
+#wall-count-panel {
+	border-right: 1px dotted #666;
+}
+.loading, .lg-error, #inprogress-panel {
+	font-size: x-large;
+	width: auto;
+	margin: 3em auto;
+	display: table;
+}
+.unimplemented {
+	text-decoration: line-through;
+}
+@keyframes loadingTrans {
+ from {
+opacity: 1;
+}
+to {
+	opacity: 0;
+}
+}
+@-webkit-keyframes loadingTrans {
+ from {
+opacity: 1;
+}
+to {
+	opacity: 0;
+}
+}
+.loading svg, #inprogress-panel svg {
+	width: 1em;
+	height: 1em;
+	margin: 0px;
+	vertical-align: middle;
+	animation: loadingTrans 1s ease-out infinite alternate;
+	-webkit-animation: loadingTrans 1s ease-out infinite alternate;
+}
+.loading span, lg-error, #inprogress-panel span {
+	vertical-align: middle;
+}
+.error-label {
+	text-align: left;
+}
+.wall {
+	-moz-box-shadow: 0px 0px 5px #c6c6c6;
+	-webkit-box-shadow: 0px 0px 5px #c6c6c6;
+	box-shadow: 0px 0px 5px #c6c6c6;
+	border: 1px solid #999;
+	padding: 10px;
+	cursor: pointer;
+	word-break: break-all;
+	margin-bottom: 5px;
+	transition: background-color 0.2s;
+	-moz-transition: background-color 0.2s;
+	-webkit-transition: background-color 0.2s;
+	-o-transition: background-color 0.2s;
+	color: #333;
+}
+a {
+	text-decoration: none;
+}
+.wall .wall-title {
+	position: relative;
+	top: 0.3em;
+	display: inline;
+	width: 70%;
+}
+.wall .wall-info {
+	position: relative;
+	top: 0.3em;
+	float: right;
+	display: inline;
+	text-align: right;
+	width: 30%;
+}
+.wall:hover {
+	background-color: #DCFEC5;
+}
+.wall:active {
+	background-color: #D9D9FF;
+}
+#wall-more {
+	text-align: center;
+	font-weight: bold;
+}
+.load-cover {
+	display: table;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(255,255,255,0.9);
+	margin: 0;
+	z-index: 98;
+}
+#wall-loading {
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	background: none;
+	color: #666;
+	z-index: 99;
+	margin: auto;
+}
+.wall-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	margin: 0;
+}
+#wall-maincontainer {
+	background-color: #000;
+	left: 0;
+	width: 100%;
+	min-width: 768px;
+}
+#wall-side {
+	margin-right: 5px;
+	width: 30%;
+	left: 0;
+	border-right: 3px solid #FFF;
+	background-color: rgba(255,255,255,0.7);
+	overflow: auto;
+}
+#post-container {
+	margin-left: 5px;
+	width: 70%;
+	right: 0;
+}
+.widget {
+	width: 100%;
+	margin: 0.5em 0;
+	overflow: auto;
+	background-color: rgba(255,255,255,0.7);
+}
+.widget-title {
+	background-color: rgba(66,139,202,0.85);
+	color: #FFF;
+	border: none;
+}
+#wall-user-panel {
+	max-height: 70%;
+}
+.cf {
+	clear: both;
+}
+.wall-post {
+	position: absolute;
+	width: 175px;
+	height: 175px;
+	border-radius: 10px;
+	padding: 5px;
+	background-color: #FFF;
+	overflow: hidden;
+}
+.wall-post:not(#post-detail) {
+	transition: opacity ease-out 0.2s;
+}
+#post-detail {
+	display: none;
+	position: absolute;
+	left: 5%;
+	width: 90%;
+	top: 5%;
+	height: 90%;
+	overflow: auto;
+	z-index: 101;
+}
+#post-detail .wall-post-content {
+	white-space: inherit;
+	overflow: auto;
+}
+#post-more {
+	right: 5px;
+	bottom: 5px;
+	text-align: center;
+	vertical-align: middle;
+	height: 50px;
+	line-height: 50px;
+	z-index: 60;
+}
+#post-more:hover {
+	background-color: #B8E0FC;
+}
+.wall-post-creator {
+	font-style: italic;
+	float: right;
+}
+.wall-post-content {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.add-post-content-div {
+	min-height: 3em;
+	border-color: rgb(204, 204, 204);
+	border-left-radius: 4px;
+	border-right-radius: 4px;
+	border-style: solid;
+	border-width: 0.8px;
+	border-collapse: separate;
+	
+}
+.bdsharebuttonbox {
+	margin-top: 5px;
+}
+.post-panel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60%;
+	white-space: inherit;
+	overflow: auto;
+}
+.comment-panel {
+	white-space: inherit;
+	overflow: auto;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40%;
+	border-top: solid 1px #D0D0D0;
+}

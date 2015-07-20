@@ -1,0 +1,10 @@
+<?php
+require('./post.php');
+$id = $loginUser;
+if (!$id)
+{
+	returnError('ÇëÏÈµÇÂ¼');
+	return;
+}
+signIn($id);
+?>

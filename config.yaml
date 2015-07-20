@@ -1,0 +1,5 @@
+name: wawall
+version: 1
+handle:
+- directoryindex: /page/index.php
+- rewrite:  if ( !is_dir() && !is_file() && path ~ "wall/(.*)" ) goto "/page/wall.php?wall=$1"

@@ -1,0 +1,11 @@
+<?php
+require('./post.php');
+$id = $loginUser;
+if (!$id)
+{
+	returnError('ÇëÏÈµÇÂ¼');
+	return;
+}
+$wall = $_POST['wall_id'];
+unlike($wall, $id);
+?>
