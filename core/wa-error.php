@@ -2,20 +2,20 @@
 class ErrorEx
 {
 	private $error;
-	public function ResetLastError()
+	public static function ResetLastError()
 	{
 		$error = null;
 	}
-	public function GetLastError()
+	public static function GetLastError()
 	{
 		return $error;
 	}
-	public function SetLastError($info)
+	public static function SetLastError($info)
 	{
 		$error = $info;
 		sae_debug($info);
 	}
-	public function HasLastError()
+	public static function HasLastError()
 	{
 		return is_null($error);
 	}

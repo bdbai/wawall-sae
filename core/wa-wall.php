@@ -1,7 +1,7 @@
 <?php
 class WaWall
 {
-	public function GetWalltypes()
+	public static function GetWalltypes()
 	{
 		$cacheKey = 'walltype';
 		$cache = getCache($cacheKey);
@@ -28,7 +28,7 @@ class WaWall
 			return null;
 		}
 	}
-	public function CreateWall($creator, $name, $desc, $type = 1, $access = 5)
+	public static function CreateWall($creator, $name, $desc, $type = 1, $access = 5)
 	{
 		try
 		{
@@ -79,7 +79,7 @@ class WaWall
 		}
 	}
 	
-	public function GetWallInfo($id)
+	public static function GetWallInfo($id)
 	{
 		try
 		{
@@ -107,7 +107,7 @@ class WaWall
 		return $ret;
 	}
 		
-	public function SetWallInfo($id, $info)
+	public static function SetWallInfo($id, $info)
 	{
 		$safeInfo = array();
 		try
@@ -149,7 +149,7 @@ class WaWall
 		}
 		return $ret;
 	}
-	public function FindWallIdsByCreator($creator)
+	public static function FindWallIdsByCreator($creator)
 	{
 		try
 		{
@@ -176,7 +176,7 @@ class WaWall
 		return $ret;
 	}
 	
-	public function FindWallIdsByAccess($access, $limit)
+	public static function FindWallIdsByAccess($access, $limit)
 	{
 		try
 		{
@@ -204,7 +204,7 @@ class WaWall
 		}
 		return $ret;
 	}
-	public function FindWallIdsByType($type, $limit)
+	public static function FindWallIdsByType($type, $limit)
 	{
 		try
 		{
@@ -233,7 +233,7 @@ class WaWall
 		return $ret;
 	}
 	
-	public function AddUserToWall($user, $id)
+	public static function AddUserToWall($user, $id)
 	{
 		try
 		{
@@ -276,7 +276,7 @@ class WaWall
 		}
 		return $lastId;
 	}
-	public function RemoveUserFromWall($user, $id)
+	public static function RemoveUserFromWall($user, $id)
 	{
 		try
 		{
@@ -327,7 +327,7 @@ class WaWall
 		}
 		return $result;
 	}
-	public function FindWallIdsByUser($user)
+	public static function FindWallIdsByUser($user)
 	{
 		try
 		{
@@ -353,7 +353,7 @@ class WaWall
 		}
 		return $ret;
 	}
-	public function FindUserIdsByWall($id, $limit = 0)
+	public static function FindUserIdsByWall($id, $limit = 0)
 	{
 		try
 		{
@@ -381,7 +381,7 @@ class WaWall
 		return $ret;
 	}
 	
-	public function DeleteWall($id)
+	public static function DeleteWall($id)
 	{
 		try
 		{

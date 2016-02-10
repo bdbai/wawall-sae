@@ -1,7 +1,7 @@
 <?php
 class WaDialog
 {
-	private function findOppositeInDbArray($arr, $opposite)
+	private static function findOppositeInDbArray($arr, $opposite)
 	{
 			foreach ($arr as $dialogOpposite)
 			{
@@ -12,7 +12,7 @@ class WaDialog
 			}
 			return false;
 	}
-	public function FindDialogIdsByUser($user)
+	public static function FindDialogIdsByUser($user)
 	{
 		try
 		{
@@ -39,7 +39,7 @@ class WaDialog
 		}
 		return null;
 	}
-	public function CreateDialog($user, $opposite)
+	public static function CreateDialog($user, $opposite)
 	{
 		try
 		{
@@ -84,7 +84,7 @@ class WaDialog
 		}
 		return null;
 	}
-	public function DeleteDialog($user, $opposite)
+	public static function DeleteDialog($user, $opposite)
 	{
 		try
 		{
@@ -127,7 +127,7 @@ class WaDialog
 		$ret = runSql($sql);
 		return $ret;
 	}
-	/*public function GetDialogInfo($id)
+	/*public static function GetDialogInfo($id)
 	{
 		try
 		{
@@ -144,7 +144,7 @@ class WaDialog
 }
 class WaMsg
 {
-	public function CreateMsg($sender, $receiver, $content, $sysmsg = false)
+	public static function CreateMsg($sender, $receiver, $content, $sysmsg = false)
 	{
 		try
 		{
@@ -207,7 +207,7 @@ class WaMsg
 		return $lastId;
 	}
 	
-	public function GetMsgInfo($id)
+	public static function GetMsgInfo($id)
 	{
 		try
 		{
@@ -239,7 +239,7 @@ class WaMsg
 			return $cache;
 		}
 	}
-	public function FindMsgIdsByUserUnread($user)
+	public static function FindMsgIdsByUserUnread($user)
 	{
 		try
 		{
@@ -265,7 +265,7 @@ class WaMsg
 		}
 		return $ret;
 	}
-	public function FindMsgIdsByUser($id, $opposite, $limit = 0)
+	public static function FindMsgIdsByUser($id, $opposite, $limit = 0)
 	{
 		try
 		{
@@ -293,7 +293,7 @@ class WaMsg
 		}
 		return $ret;
 	}
-	/*public function FindMsgIdsByUserReceiver($id, $receiver, $limit = 0)
+	/*public static function FindMsgIdsByUserReceiver($id, $receiver, $limit = 0)
 	{
 		try
 		{
@@ -321,7 +321,7 @@ class WaMsg
 		}
 		return $ret;
 	}*/
-	public function SetMsgRead($id)
+	public static function SetMsgRead($id)
 	{
 		try
 		{
@@ -369,7 +369,7 @@ class WaMsg
 		}
 		return true;
 	}
-	public function DeleteMsg($id, $user)
+	public static function DeleteMsg($id, $user)
 	{
 		try
 		{
@@ -437,7 +437,7 @@ class WaMsg
 		}
 		return $ret;
 	}
-	/*public function DeleteMsg($id, $user)
+	/*public static function DeleteMsg($id, $user)
 	{
 		try
 		{

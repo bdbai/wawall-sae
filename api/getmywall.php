@@ -15,7 +15,7 @@ while (list($key, $value) = each($walls))
 {
 	$wall = array();
 	$wall['wall_id'] = $value['wall_id'];
-	if ($_GET['fulldata'])
+	if (isset($_GET['fulldata']))
 	{
 		$info = WaWall::GetWallInfo($wall['wall_id']);
 	$wall['wall_name'] = $info['wall_name'];
@@ -39,7 +39,7 @@ while (list($key, $value) = each($walls))
 {
 	$wall = array();
 	$wall['wall_id'] = $value['wall_id'];
-	if ($_GET['fulldata'])
+	if (isset($_GET['fulldata']))
 	{
 		$info = WaWall::GetWallInfo($wall['wall_id']);
 	$wall['wall_name'] = $info['wall_name'];

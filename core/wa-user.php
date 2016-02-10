@@ -1,7 +1,7 @@
 <?php
 class WaUser
 {
-	public function GetUserIds($limit)
+	public static function GetUserIds($limit)
 	{
 		try
 		{
@@ -25,7 +25,7 @@ class WaUser
 		}
 		return $ret;
 	}
-	public function FindUserIdByEmail($email)
+	public static function FindUserIdByEmail($email)
 	{
 		try
 		{
@@ -44,7 +44,7 @@ class WaUser
 		}
 		return null;
 	}
-	public function FindUserIdByName($name)
+	public static function FindUserIdByName($name)
 	{
 		try
 		{
@@ -59,7 +59,7 @@ class WaUser
 		$ret = getData("select `user_id` from wa_user where user_name = '$safeName'");
 		return $ret;
 	}
-	public function CreateUser($email, $pass, $name, $access)
+	public static function CreateUser($email, $pass, $name, $access)
 	{
 		try
 		{
@@ -106,7 +106,7 @@ class WaUser
 		return $lastId;
 	}
 	
-	public function GetUserInfo($id)
+	public static function GetUserInfo($id)
 	{
 		try
 		{
@@ -139,7 +139,7 @@ class WaUser
 			return $cache;
 		}
 	}
-	public function GetUserData($id)
+	public static function GetUserData($id)
 	{
 		try
 		{
@@ -172,7 +172,7 @@ class WaUser
 			return $cache;
 		}
 	}
-	public function GetUserProfile($id)
+	public static function GetUserProfile($id)
 	{
 		try
 		{
@@ -206,7 +206,7 @@ class WaUser
 		}
 	}
 	
-	public function SetUserInfo($id, $info)
+	public static function SetUserInfo($id, $info)
 	{
 		$safeInfo = array();
 		try
@@ -244,7 +244,7 @@ class WaUser
 		}
 		return $ret;
 	}
-	public function SetUserData($id, $data)
+	public static function SetUserData($id, $data)
 	{
 		$safeData = array();
 		try
@@ -276,7 +276,7 @@ class WaUser
 		}
 		return $ret;
 	}
-	public function SetUserProfile($id, $profile)
+	public static function SetUserProfile($id, $profile)
 	{
 		$safeProfile = array();
 		try
@@ -309,7 +309,7 @@ class WaUser
 		return $ret;
 	}
 	
-	public function DeleteUser($id)
+	public static function DeleteUser($id)
 	{
 		try
 		{

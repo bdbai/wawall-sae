@@ -7,7 +7,7 @@ require('../function.php');
     <div class="row">
       <div class="col-md-7">
         <p>
-        <h1 id="home-title"><?php echo $appName; ?></h1>
+        <h1 id="home-title"><?php global $appName; echo $appName; ?></h1>
         </p>
         <span id="home-intro">
         <p>尝试全新的动态社交方式。</p>

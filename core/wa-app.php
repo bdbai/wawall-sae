@@ -1,7 +1,7 @@
 <?php
 class WaApp
 {
-	private function getInfo($name)
+	private static function getInfo($name)
 	{
 		try
 		{
@@ -34,7 +34,7 @@ class WaApp
 			return $cache;
 		}
 	}
-	private function setInfo($name, $value)
+	private static function setInfo($name, $value)
 	{
 		try
 		{
@@ -56,22 +56,22 @@ class WaApp
 		return $result;
 	}
 	
-	public function GetAppName()
+	public static function GetAppName()
 	{
 		return self::getInfo('name');
 	}
 	
-	public function GetAppDesc()
+	public static function GetAppDesc()
 	{
 		return self::getInfo('desc');
 	}
 	
-	public function GetAppRunning()
+	public static function GetAppRunning()
 	{
 		return (strtolower(self::getInfo('running')) == 'true');
 	}
 	
-	public function GetAppNotices()
+	public static function GetAppNotices()
 	{
 		$cacheKey = 'app_cache';
 		$cache = getCache($cacheKey);
@@ -95,17 +95,17 @@ class WaApp
 		}
 	}
 	
-	public function SetAppName($value)
+	public static function SetAppName($value)
 	{
 		return self::setInfo('name', $value);
 	}
 	
-	public function SetAppDesc($value)
+	public static function SetAppDesc($value)
 	{
 		return self::setInfo('desc', $value);
 	}
 	
-	public function SetAppRunning($value)
+	public static function SetAppRunning($value)
 	{
 		$safeValue = $value ? 'true' : 'false';
 		if (self::GetAppRunning() == $value)
@@ -118,7 +118,7 @@ class WaApp
 		}
 	}
 	
-	public function SetAppNotices($notices)
+	public static function SetAppNotices($notices)
 	{
 		try
 		{

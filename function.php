@@ -1,6 +1,11 @@
 <?php
 ob_start();
 require(dirname(__FILE__ ). '/init.php');
+
+/** Get app name.
+  */
+$appName = WaApp::GetAppName();
+
 function countWalls()
 {
 	global $counter;
@@ -46,9 +51,9 @@ function returnSucc()
 /* Check Autologin
  */
  $loginUser = null;
- $loginPass = $_COOKIE['loginpass'];
- if ($loginPass)
+ if (isset($_COOKIE['loginpass']))
  {
+   $loginPass = $_COOKIE['loginpass'];
 	 $kvKey = 'loginpass_' . $loginPass;
 	 $result = getKv($kvKey);
 	 if ($result)
@@ -183,10 +188,10 @@ function mini($email)
 }
 function logout()
 {
-	$loginPass = $_COOKIE['loginpass'];
 	setcookie('loginpass', 'deleted', time() - 3600, '/', 'wawall.sinaapp.com');
-	if ($loginPass)
+	if (isset($_COOKIE['loginpass']))
 	{
+	  $loginPass = $_COOKIE['loginpass'];
 		$kvKey = 'loginpass_' . $loginPass;
 		$loginInfo = getKv($kvKey);
 		if ($loginInfo)
@@ -468,7 +473,9 @@ function getComment($post) {
 	} catch (Exception $e) {
 		returnError($e -> getMessage());
 	}
-	
+	if (!is_array($comments)) {
+    return array();
+  }
 	$ret = array();
 	while (list($key, $value) = each($comments)) {
 		try {

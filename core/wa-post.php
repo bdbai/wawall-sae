@@ -1,7 +1,7 @@
 <?php
 class WaPost
 {
-	function CreatePost($wall, $title, $content, $creator)
+	static function CreatePost($wall, $title, $content, $creator)
 	{
 		try
 		{
@@ -35,7 +35,7 @@ class WaPost
 		return $lastId;
 	}
 	
-	public function FindPostByWall($wall, $limit = 0)
+	public static function FindPostByWall($wall, $limit = 0)
 	{
 		try
 		{
@@ -63,7 +63,7 @@ class WaPost
 		return $ret;
 	}
 
-	public function GetPostInfo($id)
+	public static function GetPostInfo($id)
 	{
 		try
 		{
@@ -99,7 +99,7 @@ class WaPost
 		}
 	}
 	
-	public function SetPostInfo($id, $wall, $title, $content)
+	public static function SetPostInfo($id, $wall, $title, $content)
 	{
 		try
 		{
@@ -127,7 +127,7 @@ class WaPost
 		return $ret;		
 	}
 	
-	public function DeletePost($id)
+	public static function DeletePost($id)
 	{
 		try
 		{

@@ -3,7 +3,11 @@ require('./get.php');
 
 $wall = $_GET['wall'];
 $limit = $_GET['limit'];
-$lastPost = $_GET['lastpost'];
+if (isset($_GET['lastpost'])) {
+  $lastPost = $_GET['lastpost'];
+} else {
+  $lastPost = false;
+}
 $limit = intval($limit ? $limit : 20);
 $limit = min($limit, 300);
 /*try

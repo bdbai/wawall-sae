@@ -137,6 +137,10 @@ if (kixi.addEventListener) {
 	 var lastPostId = null;
  function processPosts(posts, limit)
  {
+   if (posts.length === 0) {
+     lastObj.prevObj = undefined;
+     return;
+   }
 	 if (typeof(limit) == 'undefined')
 	 {
 		 limit = posts.length;
@@ -196,7 +200,7 @@ if (kixi.addEventListener) {
 			 lastObj.nextObj = lastBut1Obj;
 		 }
 		 nowPostObj = firstObj;
-		 highlightPost(firstObj);
+     highlightPost(firstObj);
 	 }
  }
  function getPostClick(_obj)

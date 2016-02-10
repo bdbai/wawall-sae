@@ -1,7 +1,7 @@
 <?php
 class WaComment
 {
-	public function CreateComment($creator, $post, $content, $replyto)
+	public static function CreateComment($creator, $post, $content, $replyto)
 	{
 		try
 		{
@@ -28,7 +28,7 @@ class WaComment
 		$ret = lastId();
 		return $ret;
 	}
-	public function FindCommentByPost($post, $limit =0)
+	public static function FindCommentByPost($post, $limit =0)
 	{
 		try
 		{
@@ -55,7 +55,7 @@ class WaComment
 		}
 		return $ret;
 	}
-	public function GetCommentInfo($id)
+	public static function GetCommentInfo($id)
 	{
 		try
 		{
@@ -87,7 +87,7 @@ class WaComment
 			return $cache;
 		}
 	}
-	public function DeleteComment($id)
+	public static function DeleteComment($id)
 	{
 		try
 		{

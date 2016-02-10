@@ -5,6 +5,7 @@ if (!$appRunnning):
 	header('Location: ./error.html');
 	die(0);
 	else:
+  header('Content-Type: text/html; charset=UTF-8');
 	$appName = WaApp::GetAppName();
 	$appDesc = WaApp::GetAppDesc();
 ?>
